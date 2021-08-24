@@ -1,15 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { Fragment } from 'react';
 import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
+import { CssBaseline,withStyles } from '@material-ui/core';
+
 
 function App() {
   return (
+    <CssBaseline>
       <AppHeader>
-        <Home></Home>
       </AppHeader>
+      <Home></Home>
+    </CssBaseline>
+      
+
   );
 }
-
-export default App;
+export default (App);

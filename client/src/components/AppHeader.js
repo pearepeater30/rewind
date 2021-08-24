@@ -4,7 +4,7 @@ import { AppBar, Toolbar, Typography } from "@material-ui/core";
 const AppHeader = () => {
   return(
   <AppBar position="static">
-    <Toolbar>
+      <Toolbar>
       <Typography variant='h5'>
         My React App
       </Typography>
