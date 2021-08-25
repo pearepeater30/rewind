@@ -8,9 +8,8 @@ import { CssBaseline,withStyles } from '@material-ui/core';
 function App() {
   return (
     <CssBaseline>
-      <AppHeader>
-      </AppHeader>
-      <Home></Home>
+      <AppHeader />
+      <Home />
     </CssBaseline>
       
 
