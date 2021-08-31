@@ -6,16 +6,29 @@ var logger = require('morgan');
 const passport = require("passport");
 const flash = require("express-flash")
 const session = require("express-session");
-
+const mongoose = require("mongoose");
+const dotenv = require("dotenv")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+dotenv.config({ path: "./config/config.env" });
+
 var app = express();
+
+require("./config/passport")(passport);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "/public")));
+app.use(flash());
 
 // Express session
 app.use(
@@ -27,6 +40,18 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Connect to DB
+//process.env.DB_MONGO_ENV
+mongoose
+  .connect(process.env.DB_MONGO_ENV
+    , { useNewUrlParser: true })
+  .then((result) => {
+    console.log("Connected to DB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.use(logger('dev'));
 app.use(express.json());
