@@ -9,14 +9,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex', 
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-  },
-  pos: {
-    marginBottom: 12,
-  },
+  }
 }));
 
 function SimpleCard(props) {

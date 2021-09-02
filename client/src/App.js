@@ -2,7 +2,8 @@ import './App.css';
 import React, { Fragment } from 'react';
 import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
-import Grid from '@material-ui/core/Grid';
+import FileUploadField from './components/FileUploadField';
+import Box from '@material-ui/core/Box';
 import SimpleCard from './components/SimpleCard'
 import { CssBaseline,withStyles } from '@material-ui/core';
 
@@ -11,22 +12,14 @@ function App() {
   return (
     <CssBaseline>
       <AppHeader />
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: '100vh' }}
-      >
+      <Box my="10rem" mx="4rem" justifyContent="center">
+      <SimpleCard>
+        <FileUploadField >
+          Drop File Here
+        </FileUploadField>
 
-        <Grid item xs={3}>
-          <SimpleCard>
-            <Home />
-          </SimpleCard>
-        </Grid>      
-      </Grid>
-      
+      </SimpleCard>
+      </Box>
     </CssBaseline>
   );
 }
