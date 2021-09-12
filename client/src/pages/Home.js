@@ -2,7 +2,7 @@ import React from 'react';
 import {Typography, Container, Button} from '@material-ui/core';
 import './Home.css'
 
-const Home = () => {
+function Home () {
   return(
     <div id = "showcase">
       <Typography variant="h4">

@@ -10,17 +10,17 @@ import { CssBaseline,withStyles } from '@material-ui/core';
 
 function App() {
   return (
+    <div>
     <CssBaseline>
       <AppHeader />
       <Box my="10rem" mx="4rem" justifyContent="center">
       <SimpleCard>
         <FileUploadField >
-          Drop File Here
         </FileUploadField>
-
       </SimpleCard>
       </Box>
     </CssBaseline>
+    </div>
   );
 }
 export default (App);
