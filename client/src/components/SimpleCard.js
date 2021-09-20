@@ -1,14 +1,15 @@
 import './SimpleCard.css';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
-import Card from '@material-ui/core/Card';
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '20vw',
     display: 'flex', 
     justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'center',
+    alignItems: 'center'
   }
 }));
 
@@ -16,9 +17,9 @@ function SimpleCard(props) {
   const classes = useStyles();
   
   return(
-    <Card className={classes.root} variant="outlined">
+    <Box className={classes.root} variant="outlined" boxShadow={3}>
       {props.children}
-    </Card>
+    </Box>
   )
     
 }

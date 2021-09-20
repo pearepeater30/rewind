@@ -1,5 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import '../styles/AppHeader.css'
 
 function AppHeader () {
   return(
